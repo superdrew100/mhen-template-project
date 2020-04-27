@@ -1,16 +1,35 @@
+//const mongoose = require('../db/connection.js')
+//const Schema = mongoose.Schema
+
+//import { Schema } from "mongoose";
+
+
+/* 
+ * Place all DB schemas here for a single model.
+ */
+
+/* Step 1
+ *
+ * Import mongoose connection
+ *
+ */
 const mongoose = require('../db/connection.js')
-const Schema = mongoose.Schema
 
-import { Schema } from "mongoose";
-
-const IssueSchema = new Schema({
-description: String,
-createdAt: Date,
-status: String,
-priority: String,
+/* Step 2
+ *
+ * TODO: create model schema 
+ *
+ */
+const IssueSchema = new mongoose.Schema({
+  description: String,
+  createdAt: Date,
+  status: String,
+  priority: String,
 
 })
 
-module.exports = {
-    IssueSchema,
-}
+/* Step 3
+ *
+ * TODO: export the schema
+ */
+module.exports = mongoose.model('Template', IssueSchema);
